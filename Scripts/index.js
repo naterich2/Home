@@ -106,16 +106,19 @@ function updateGraph(){
 }
 
 function updateSummaryData(){
+  var aString = "<a href=\"http://192.168.0.34/admin\" target=\"_blank\"\
+    style=\"color:black; text-decoration:none;\">";
   $.getJSON("http://192.168.0.34/admin/api.php", function(data){
     try{
-      document.getElementById("numBlocked").innerHTML = data.domains_being_blocked;
-      document.getElementById("qToday").innerHTML = data.dns_queries_today;
-      document.getElementById("blockedToday").innerHTML = data.ads_blocked_today;
-      document.getElementById("adPercent").innerHTML = data.ads_percentage_today;
-      document.getElementById("uniqueD").innerHTML = data.unique_domains;
-      document.getElementById("qForward").innerHTML = data.queries_forwarded;
-      document.getElementById("qCached").innerHTML = data.queries_cached;
-      document.getElementById("uniqueID").innerHTML = data.unique_clients;
+      document.getElementById("numBlocked").innerHTML = (aString+data.domains_being_blocked+"</a>");
+      console.log(aString+data.domains_being_blocked+"</a>");
+      document.getElementById("qToday").innerHTML = (aString+data.dns_queries_today+"</a>");
+      document.getElementById("blockedToday").innerHTML = aString+data.ads_blocked_today+"</a>";
+      document.getElementById("adPercent").innerHTML = aString+data.ads_percentage_today+"</a>";
+      document.getElementById("uniqueD").innerHTML = aString+data.unique_domains+"</a>";
+      document.getElementById("qForward").innerHTML = aString+data.queries_forwarded+"</a>";
+      document.getElementById("qCached").innerHTML = aString+data.queries_cached+"</a>";
+      document.getElementById("uniqueID").innerHTML = aString+data.unique_clients+"</a>";
     }catch(err){
       alert(err.message);
     }
