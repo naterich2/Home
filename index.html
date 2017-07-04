@@ -3,12 +3,10 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/index.js"></script>
-  <script src="Chart.bundle.min.js"></script>
+  <script src="Scripts/index.js"></script>
+  <script src="Scripts/Chart.bundle.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="/main.css">
-
-
+  <link rel="stylesheet" type="text/css" href="Styles/main.css">
 </head>
 <body>
   <div class="mainPage">
@@ -17,16 +15,17 @@
     </div>
     <div class="navbar">
       <ul class="navbar">
-        <li class="navbar"><a href="/index.html">Main</a></li>
-        <li class="navbar"><a href="/admin">Pi-Hole Admin</a></li>
+        <li class="navbar"><a href="/home/index.html">Main</a></li>
+        <!-- Change to localhost/admin on pi -->
+        <li class="navbar"><a href="http://192.168.0.34/admin">Pi-Hole Admin</a></li>
         <li style="float:right; border-left: 1px solid white"
-          class="navbar"><a href="/about.html">About Me</a>
+          class="navbar"><a href="about.html">About Me</a>
       </ul>
     </div>
     <div class="row-2">
       <div class="pi-sum">
         <h2>Pi-hole Stats</h2>
-        <table class="">
+        <table class="pi-stats">
           <tr>
             <td>Domains Being Blocked: </td>
             <td id="numBlocked"></td>
@@ -63,7 +62,7 @@
       </div>
       <div class="queryChart">
         <div class="graph-header">
-          <span><h2 id="chartLabel" style="padding:2px; margin:0px;">Queries over 24 hours</h2></span>
+          <span><h2 id="chartLabel" style="padding:5px; margin:0px;">Queries over 24 hours</h2></span>
         </div>
         <canvas id="queryChart" height="250px"></canvas>
         <div id ="form-1">
@@ -78,7 +77,6 @@
           </form>
           <span><button onClick="buttonPush()">Update Graph</button></span>
         </div>
-        <p id="time-test"></p>
       </div>
     </div>
   </div>
