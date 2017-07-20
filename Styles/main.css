@@ -105,6 +105,7 @@ tr:nth-child(odd){
 #queryChart {
   width:80%;
   max-height:350px;
+  margin:10px;
 }
 
 .pi-sum{
@@ -124,4 +125,11 @@ tr:nth-child(odd){
 }
 #form1 {
   display:inline;
+}
+#home-iframe {
+  align:bottom;
+  width: 30%;
+  height:300px;
+  border-radius:6px;
+  margin:10px;
 }

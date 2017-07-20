@@ -106,8 +106,7 @@ function updateGraph(){
 }
 
 function updateSummaryData(){
-  var aString = "<a href=\"http://192.168.0.34/admin\" target=\"_blank\"\
-    style=\"color:black; text-decoration:none;\">";
+  var aString = "<a href=\"http://192.168.0.34/admin\" target=\"_blank\" style=\"color:black; text-decoration:none;\">";
   $.getJSON("http://192.168.0.34/admin/api.php", function(data){
     try{
       document.getElementById("numBlocked").innerHTML = (aString+data.domains_being_blocked+"</a>");
